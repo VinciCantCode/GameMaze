@@ -6,9 +6,9 @@ public class Hazard : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))  // ✅ 判断 Player 层
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))  // Check if colliding with Player layer
         {
-            Player player = other.GetComponent<Player>();  // ✅ 声明 player 变量
+            Player player = other.GetComponent<Player>();  // Get Player component
             if (player != null)
             {
                 player.Die();

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [Header("References")]
-    public Transform trans;  // 🚨 这里的 trans 可能为空，建议直接使用 transform
+    public Transform trans;  
 
     [Header("Stats")]
     [Tooltip("How many units the projectile will move forward per second.")]
@@ -15,23 +15,22 @@ public class Projectile : MonoBehaviour
 
     private Vector3 spawnPoint;
 
-    // === 添加的新变量 ===
+    //New Variables
     [Header("Direction")]
     [Tooltip("The direction the projectile will travel.")]
-    public Vector3 moveDirection = Vector3.forward; // 默认向前方向(Z轴)
+    public Vector3 moveDirection = Vector3.forward; 
 
     void Start()
     {
-        spawnPoint = transform.position;  // ✅ 改为 transform
+        spawnPoint = transform.position;  // Use transform instead
     }
 
     void Update()
     {
-        // === 修改的移动逻辑 ===
-        // 原代码: trans.Translate(0, 0, speed * Time.deltaTime, Space.Self);
+      
         trans.Translate(moveDirection.normalized * speed * Time.deltaTime, Space.World);
 
-        // 销毁超出范围的投射物
+        // Destroy projectile if out of range
         if (Vector3.Distance(trans.position, spawnPoint) >= range)
         {
             ResetToSpawnPoint();

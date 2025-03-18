@@ -308,10 +308,14 @@
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.44f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Goal.cs"
 "Assets/Scripts/Hazard.cs"
+"Assets/Scripts/LevelSelectUI.cs"
 "Assets/Scripts/Patroller.cs"
 "Assets/Scripts/Player.cs"
 "Assets/Scripts/Projectile.cs"
 "Assets/Scripts/Shooter.cs"
+"Assets/Scripts/SpikeTrap.cs"
+"Assets/Scripts/Wanderer.cs"
+"Assets/Scripts/WanderRegion.cs"
 -langversion:9.0
 /deterministic
 /optimize+

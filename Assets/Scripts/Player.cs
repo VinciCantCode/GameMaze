@@ -218,7 +218,7 @@ public class Player : MonoBehaviour
         modelTrans.gameObject.SetActive(true);
     }
 
-    // 碰撞检测部分
+    // Detect collision with hazards
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Hazard"))
@@ -227,61 +227,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    // 移除 BoxCollider
-    void RemoveBoxCollider(GameObject gameObject)
-    {
-        BoxCollider collider = gameObject.GetComponent<BoxCollider>();
-        if (collider != null)
-        {
-            Destroy(collider);
-        }
-    }
-
-    // 设置 GameObject 为 Trigger
-    public void SetAsTrigger(GameObject gameObject)
-    {
-        Collider col = gameObject.GetComponent<Collider>();
-        if (col != null)
-        {
-            col.isTrigger = true;
-        }
-    }
-
-    // 添加 Rigidbody 并设为 Kinematic
-    public void AddKinematicRigidbody(GameObject gameObject)
-    {
-        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-        if (rb == null)
-        {
-            rb = gameObject.AddComponent<Rigidbody>();
-        }
-        rb.isKinematic = true;
-    }
-
-    // 设置 GameObject 到指定层
-    public void SetLayer(GameObject gameObject, string layerName)
-    {
-        gameObject.layer = LayerMask.NameToLayer(layerName);
-    }
-
-    private void Awake()
-    {
-        // 处理 Layer 碰撞逻辑
-        int playerLayer = LayerMask.NameToLayer("Player");
-        int hazardLayer = LayerMask.NameToLayer("Hazard");
-
-        if (playerLayer != -1 && hazardLayer != -1)
-        {
-            Physics.IgnoreLayerCollision(hazardLayer, playerLayer, false);
-        }
-    }
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (hit.gameObject.CompareTag("Hazard"))
-        {
-            Die();
-        }
-    }
 
 }
 

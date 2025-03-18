@@ -11,7 +11,7 @@ public class Patroller : MonoBehaviour
     // Array to store patrol points
     private int currentPointIndex = 0; // Index of the current point
 
-    //让player静止的时候碰到patroller也死亡
+    //Kill player even when they are stationary
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
