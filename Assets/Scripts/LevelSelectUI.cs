@@ -66,6 +66,8 @@ public class NewBehaviourScript : MonoBehaviour
 
     void OnGUI()
     {
+
+     
         GUILayout.Label("OBSTACLE COURSE");
 
         //If this isn't the main menu:
@@ -100,6 +102,7 @@ public class NewBehaviourScript : MonoBehaviour
                 }
             }
         }
+       
     }
 }
 

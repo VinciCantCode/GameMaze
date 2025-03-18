@@ -1,6 +1,6 @@
 # Unity Game Development Project
 
-This is a Unity game development project for CSCI 6617 Game Development course.
+This is a Unity game development project for Game Development course, enjoy!
 
 ## Project Structure
 
@@ -12,8 +12,7 @@ This is a Unity game development project for CSCI 6617 Game Development course.
 
 1. Clone this repository
 2. Open the project in Unity Hub
-3. Open the project in Unity Editor
-4. Press Play to start the game
+3. Press Play to start the game
 
 ## Development
 
